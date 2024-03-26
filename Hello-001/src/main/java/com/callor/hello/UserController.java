@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.callor.hello.models.UserDto;
+
 
 /**
  * Spring routing
@@ -53,6 +55,16 @@ public class UserController {
 	@RequestMapping(value="/join",method=RequestMethod.GET)
 	public String join() {
 		return null;
+	}
+	
+//	@RequestMapping(value="/join",method=RequestMethod.POST)
+//	public String join(String username,String password,String name,String email, String tel) {
+//	return null;	
+//	}
+	@RequestMapping(value="/join",method=RequestMethod.POST)
+	public String join(UserDto userDto,Model model) {
+		model.addAttribute("USER",userDto);
+	return null;	
 	}
 	
 }
