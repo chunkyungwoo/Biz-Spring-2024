@@ -10,15 +10,12 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class UserDto {
-	private String username;
-	private String password;
-	private String name;
-	private String email;
-	private String tel;
-	
-	
+public class CustomVO {
+	private String c_code; //	varchar(5)
+	private String c_name; //	varchar(25)
+	private String c_tel; //	varchar(15)
+
 }
