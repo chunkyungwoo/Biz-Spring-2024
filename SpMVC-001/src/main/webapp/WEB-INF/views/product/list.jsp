@@ -24,6 +24,9 @@
     			</tr>
     		</c:forEach>
     	</table>
+    	<div class="w3-container w3-button">
+    		<a href="product/insert">상품추가</a>
+    	</div>
     </div>
 
 </body>

@@ -10,14 +10,15 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class ProductVO {
+public class UserDto {
+	private String username;
+	private String password;
+	private String name;
+	private String email;
+	private String tel;
 	
-	private String p_code; //	varchar(6)
-	private String p_name;	//varchar(25)
-	private String p_item;	//varchar(25)
-	private int p_price;	// int
-
+	
 }

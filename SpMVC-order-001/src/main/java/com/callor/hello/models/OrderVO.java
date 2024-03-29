@@ -13,11 +13,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ProductVO {
+public class OrderVO {
+	private String o_num; //varchar(6)
+	private String o_date; //varchar(10)
+	private String o_ccode; //varchar(5)
 	
-	private String p_code; //	varchar(6)
-	private String p_name;	//varchar(25)
-	private String p_item;	//varchar(25)
-	private int p_price;	// int
 
 }
