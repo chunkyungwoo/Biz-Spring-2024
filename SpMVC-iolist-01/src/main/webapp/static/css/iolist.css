@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+table.iolsit {
+  width: 80%;
+  margin: 10px auto;
+}
+
+table.iolist th,
+table.iolist td {
+  text-align: left;
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+table.iolist th {
+  color: blue;
+}
