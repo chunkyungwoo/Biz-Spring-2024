@@ -35,8 +35,8 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
+		<!-- DBMS 연동을 위한 dependencies 설치 -->
 
-		<!-- DBMS 연동을 위한 Dependencies 설치 -->
 		<!-- commons-DBCP2 -->
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
 		<dependency>
@@ -44,6 +44,7 @@
 			<artifactId>commons-dbcp2</artifactId>
 			<version>2.12.0</version>
 		</dependency>
+
 		<!-- mybatis -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
@@ -77,10 +78,6 @@
 		</dependency>
 
 
-
-
-
-
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -93,6 +90,14 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>1.5.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.32</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- Servlet -->
@@ -120,15 +125,6 @@
 			<version>5.10.2</version>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.32</version>
-			<scope>provided</scope>
-		</dependency>
-
 
 	</dependencies>
 	<build>
