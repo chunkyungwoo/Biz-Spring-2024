@@ -1,61 +1,23 @@
 @charset "UTF-8";
 
-table.iolist {
-  width: 80%;
-  margin: 10px auto;
-  border-collapse: separate;
-  background-color: #eee;
-  table-layout: fixed;
-}
-
-table.iolist tbody tr {
-  &:nth-of-type(odd) {
-    background-color: #ddd;
-  }
-  &:hover {
-    background-color: #eee;
-    cursor: pointer;
-  }
-}
-tr.output {
-  color: blue;
-}
-
-table.iolist th,
-table.iolist td {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  text-align: left;
-  padding: 12px 16px;
-  white-space: nowrap;
-  border-bottom: 1px solid #777;
-  border-top: 1px solid white;
-}
-
-table.iolist th {
-  color: blue;
-}
-
-table.iolist td.number {
-  text-align: right;
-}
-
 /*
+
 flex item 들의 정렬을 할때 사용하는 속성들
-  align-items: center
-  justify-content: center;
+    align-items: center
+    justify-content: center;
 flex-direction 에 따라서 정렬되는 방법이 다르다
-  row : 좌우 가운데 정렬을 하기위해서 ; justify-content : center
-    세로 가운데 정령 : align-items : center
-  column : 좌우 가운데 정렬을 하기위해서 : align-items : center
-    세로 가운데 정령 : justify-content : center
+  row : 좌우 가운데 정렬을 하기위해서 : justify-content : center
+      세로 가운데 정렬 : align-items : center
+  column : 좌우 가운데 정렬을 하기위해서 : align-items : center    
+      세로 가운데 정렬 : justify-content : center
+
 */
 div.iolist.btn_box {
   width: 80%;
   margin: 5px auto;
-  text-align: right;
   border: 1px solid #777;
   border-radius: 10px;
+  display: flex;
   justify-content: center;
   align-items: center;
 
@@ -73,6 +35,7 @@ div.iolist.btn_box {
     }
   }
 }
+
 div.iolist.btn_box form {
   margin-left: auto;
   padding: 1.2rem;
@@ -82,6 +45,64 @@ div.iolist.btn_box form {
     outline: none;
     border: 1px solid #777;
   }
+}
+
+/*
+Table 의 문자열 ellipsis(...으로 표현하기)
+칼럼에 표현되는 문자열이 너무 크면 Table 의 Width 가 원하는 크기보다
+벗어나는 경우가 발생할 수 있다
+
+1. table : table-layout: fixed; 으로 설정
+2. 칼럼의 width 를 고정값으로 설정
+3. text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+*/
+
+table.iolist {
+  width: 80%;
+  margin: 10px auto;
+  border-collapse: separate;
+  background-color: #eee;
+
+  table-layout: fixed;
+}
+
+td.iolist.pname {
+  max-width: 500px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+table.iolist tbody tr {
+  &:nth-of-type(odd) {
+    background-color: #ddd;
+  }
+  &:hover {
+    background-color: #eee;
+    cursor: pointer;
+  }
+}
+tr.output {
+  color: blue;
+}
+
+table.iolist th,
+table.iolist td {
+  text-align: left;
+  padding: 12px 16px;
+  white-space: nowrap;
+  border-bottom: 1px solid #777;
+  border-top: 1px solid white;
+}
+
+table.iolist th {
+  color: blue;
+}
+
+table.iolist td.number {
+  text-align: right;
 }
 
 form.iolist {

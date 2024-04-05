@@ -5,8 +5,9 @@ form.user.login {
   margin: 10px auto;
 
   fieldset {
-    border-radius: 10px;
+    border-radius: 20px;
   }
+
   legend {
     text-align: center;
     padding: 8px;
@@ -24,7 +25,7 @@ form.user.login {
       padding: 8px;
       transition: 0.8s;
       &:not([type="submit"]):focus {
-        width: 70%;
+        width: 80%;
       }
     }
   }

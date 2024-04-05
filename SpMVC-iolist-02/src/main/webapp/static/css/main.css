@@ -36,6 +36,7 @@ footer {
 section.container {
   flex: 1;
   height: calc(100%);
+  overflow-y: auto;
   margin: 3px;
   border: 1px solid blue;
 }
