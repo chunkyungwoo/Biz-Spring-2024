@@ -10,8 +10,9 @@
     <h1>Hello!! Korea</h1>
     <h2>The time on the Today is ${serverTime}</h2>
     
-    <h3><sec:authentication property="principal.username"/>
-    <h3><sec:authentication property="principal.email"/>
-    </h3>
+    <sec:authorize access="isAuthenticated()">
+    <h3><sec:authentication property="principal.username"/></h3>
+    <h3><sec:authentication property="principal.email"/></h3>
+    </sec:authorize>
   </body>
 </html>
