@@ -25,6 +25,7 @@
 			/> -->
 			
 			<sec:intercept-url pattern="/admin" access="hasRole('ADMIN')"/>
+			<sec:intercept-url pattern="/**" access="permitAll()"/>
 		
 		</sec:http>
 		
