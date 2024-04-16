@@ -3,7 +3,11 @@ package com.callor.hello.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.context.annotation.Bean;
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.callor.hello.dao.RoleDao;
@@ -15,9 +19,12 @@ import com.callor.hello.service.UserService;
 @Service
 public class UserServiceImpl implements UserService{
 	
+	private final PasswordEncoder passwordEncoder;
 	private final UserDao userDao;
 	private final RoleDao roleDao;
-	public UserServiceImpl(UserDao userDao,RoleDao roleDao) {
+	public UserServiceImpl(
+			@Qualifier("passEncoderV1") PasswordEncoder passwordEncoder, UserDao userDao, RoleDao roleDao) {
+		this.passwordEncoder = passwordEncoder;
 		this.userDao = userDao;
 		this.roleDao = roleDao;
 	}
@@ -27,19 +34,24 @@ public class UserServiceImpl implements UserService{
 	 * 2. 있으면 새로 추가(가입)되는 회원은 일반 사용자
 	 * 3. 없으면 새로 추가(가입)되는 회원은 admin 이며 일반사용자
 	 */
+	@Transactional
 	@Override
 	public UserVO createUser(UserVO createUserVO) {
 		
 		String username = createUserVO.getUsername();
+		String password = createUserVO.getPassword();
 		
 		List<UserVO> userList = userDao.selectAll();
+		
+		String encPassword = passwordEncoder.encode(password);
+		createUserVO.setPassword(encPassword);
 		
 		List<RoleVO> roles = new ArrayList<>();
 		// 조건이 true 이면 아직 아무도 회원가입을 하지 않았다
 		if(userList == null || userList.size() <= 0) {
 			roles.add(RoleVO.builder()
 					.r_username(username)
-					.r_role("ADMIN").build());
+					.r_role("ROLE_ADMIN").build());
 			roles.add(RoleVO.builder()
 					.r_username(username)
 					.r_role("ROLE_USER").build());
@@ -62,7 +74,7 @@ public class UserServiceImpl implements UserService{
 	 * 프로젝트가 시작될때 table 이 없으면 
 	 * 자동으로 생성되는 method 를 실행하기 위함임
 	 */
-	@Bean
+	@Autowired
 	public void create_table () {
 		userDao.create_user_table(null);
 		userDao.create_role_table(null);
