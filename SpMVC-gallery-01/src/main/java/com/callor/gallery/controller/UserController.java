@@ -9,14 +9,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserController {
 	
 	@RequestMapping(value="/join",method=RequestMethod.GET)
-	public String join() {
-		// reurn "user/join";
-		return null;
-	}
-	@RequestMapping(value="/login",method=RequestMethod.GET)
-	public String login() {
-		// reurn "user/login";
+	public String join( ) {
+		
+		// return "user/join";
 		return null;
 	}
 
+	@RequestMapping(value="/login",method=RequestMethod.GET)
+	public String login( ) {
+		
+		// return "user/login";
+		return null;
+	}
+
+	
 }

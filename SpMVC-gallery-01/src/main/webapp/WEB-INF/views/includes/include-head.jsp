@@ -7,16 +7,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>나의 홈페이지</title>
 <style>
-*{
-box-sizing: border-box;
-margin:0;
-padding:0;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 </style>
-<link rel="stylesheet" href="${rootPath}/static/css/main.css?2024-01-18-003">
+<link rel="stylesheet" 
+	href="${rootPath}/static/css/main.css?2024-04-18-009" />
 </head>
 <script>
-// js 파일에서 사용할 rootPath 변수 선언
+	// js 파일에서 사용할 rootPath 변수 선언
 	const rootPath = "${rootPath}"
 </script>
+
+
 
