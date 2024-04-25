@@ -1,4 +1,4 @@
-package com.callor.gallery;
+package com.callor.gallery.controller;
 
 import java.util.List;
 import java.util.Locale;
@@ -32,7 +32,7 @@ public class HomeController {
 		model.addAttribute("NAME","나는 이몽룡 입니다");
 		List<GalleryVO> gList = galleryDao.selectAll();
 		model.addAttribute("GALLERYS",gList);
-		return "home";
+		return "gallery/list";
 	}
 	
 }
