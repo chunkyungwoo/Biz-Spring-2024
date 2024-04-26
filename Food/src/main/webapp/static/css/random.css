@@ -1,0 +1,124 @@
+@charset "UTF-8";
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.roulette-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.roulette {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  transform-origin: center center;
+  border: 2px solid blue;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 100px;
+  background-color: red;
+  transform: translate(-50%, -50%); /* 중앙에 정렬 및 회전 */
+  transform-origin: center bottom;
+}
+
+.food-list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  list-style: none;
+}
+
+.food-list li {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 원 안에 칸을 만들어 배치하기 위한 추가 스타일 */
+.food-cell {
+  position: absolute;
+  width: 120px; /* 각 칸의 너비 조정 */
+  height: 120px; /* 각 칸의 높이 조정 */
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+  line-height: 120px; /* 텍스트를 칸의 중앙에 정렬 */
+}
+
+/* 각 리스트의 위치 조정
+.food-cell:nth-child(1) {
+  transform: rotate(0deg) translate(150px) rotate(0deg);
+}
+
+.food-cell:nth-child(2) {
+  transform: rotate(36deg) translate(150px) rotate(-36deg);
+}
+
+.food-cell:nth-child(3) {
+  transform: rotate(72deg) translate(150px) rotate(-72deg);
+}
+
+.food-cell:nth-child(4) {
+  transform: rotate(108deg) translate(150px) rotate(-108deg);
+}
+
+.food-cell:nth-child(5) {
+  transform: rotate(144deg) translate(150px) rotate(-144deg);
+}
+
+.food-cell:nth-child(6) {
+  transform: rotate(180deg) translate(150px) rotate(-180deg);
+}
+
+.food-cell:nth-child(7) {
+  transform: rotate(216deg) translate(150px) rotate(-216deg);
+}
+
+.food-cell:nth-child(8) {
+  transform: rotate(252deg) translate(150px) rotate(-252deg);
+}
+
+.food-cell:nth-child(9) {
+  transform: rotate(288deg) translate(150px) rotate(-288deg);
+}
+
+.food-cell:nth-child(10) {
+  transform: rotate(324deg) translate(150px) rotate(-324deg);
+} */
+
+button {
+  padding: 10px 20px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#foodList {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: transform 1s ease-in-out; /* 회전 애니메이션 */
+}
