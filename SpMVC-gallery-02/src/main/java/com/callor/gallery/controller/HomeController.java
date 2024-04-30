@@ -17,6 +17,7 @@ import com.callor.gallery.models.GalleryVO;
 @Controller
 public class HomeController {
 	
+	
 	private final GalleryDao galleryDao;
 	public HomeController(GalleryDao galleryDao) {
 		super();
@@ -29,7 +30,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		model.addAttribute("NAME","나는 이몽룡 입니다");
+		model.addAttribute("NAME","나는 이몽룡입니다");
 		List<GalleryVO> gList = galleryDao.selectAll();
 		model.addAttribute("GALLERYS",gList);
 		return "gallery/list";

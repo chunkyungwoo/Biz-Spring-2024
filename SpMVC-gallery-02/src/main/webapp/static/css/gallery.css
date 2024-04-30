@@ -11,6 +11,7 @@ section.gallery.container {
   border-radius: 20px;
   padding: 10px;
 }
+
 .gallery.card {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
   height: 200px;
@@ -20,9 +21,10 @@ section.gallery.container {
   div {
     flex: 1;
   }
-  .gallery.subject {
-    background-color: #7baef0;
+  .galley.subject {
+    background-color: #6186ec;
     color: white;
     padding: 5px;
+    text-align: center;
   }
 }

@@ -5,10 +5,11 @@
   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
   layout:decorate="~{/bbs/home}"
 >
-  <section>
-    <aside class="bbb-left-side" layout:fragment="bbb-left-side">
-      <a href="">전체보기</a>
-      <a href="">인기글 보기</a>
+  <section class="bbs container">
+    <aside class="bbs-left-side" layout:fragment="bbs-left-side">
+      <a href="@{/bbs/free/all}">전체보기</a>
+      <a href="@{/bbs/free/like}">인기글 보기</a>
+      <a th:href="@{/bbs/free/insert}">글쓰기</a>
     </aside>
     <aside class="bbs-right-side" layout:fragment="bbs-right-side">
       자유게시판 리스트

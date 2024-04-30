@@ -1,6 +1,7 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  const fileInput = document.querySelector("input.file.single");
+document.addEventListener("DOMContentLoaded", () => {
+  const fileInput = document.querySelector("input.file.signle");
   const filesInput = document.querySelector("input.file.multi");
+
   const prevImg = document.querySelector("img.gallery");
   const imgBorderBox = document.querySelector("div.image");
   const base64Box = document.querySelector("textarea.base64");
@@ -65,6 +66,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       await filePreView(file);
     }
   });
+
   fileInput.addEventListener("change", async (e) => {
     // 이미지 파일의 미리보기
     const target = e.target;

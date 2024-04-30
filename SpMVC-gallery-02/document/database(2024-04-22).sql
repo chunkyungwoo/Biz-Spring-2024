@@ -1,6 +1,7 @@
 -- gallery
 CREATE DATABASE galleryDB;
 USE galleryDB;
+DROP TABLE tbl_gallerys;
 CREATE TABLE tbl_gallerys (
 	g_id	VARCHAR(125)	PRIMARY KEY,
 	g_date	VARCHAR(10)	NOT NULL,
@@ -10,5 +11,6 @@ CREATE TABLE tbl_gallerys (
 	g_content	VARCHAR(100)	NOT NULL,
 	g_image	LONGTEXT	NOT NULL
 );
+DESC tbl_gallerys;
 
-DROP TABLE tbl_gallerys;
+

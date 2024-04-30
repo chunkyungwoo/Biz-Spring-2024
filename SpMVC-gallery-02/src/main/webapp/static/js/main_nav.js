@@ -2,15 +2,16 @@
 
 /*
 JSON type 의 객체
-  형식 = { key:value}
-  console.log(NAV_INDEX.home) 결과는 ? {url: "/"}
-  console.log(NAV_INDEX.home.url) 결과는 ? "/"
-  console.log(NAV_INDEX["home"]) 결과는 ? {url : "/"}
+  형식 = { Key:value }
+  console.log(NAV_INDEX.home) 결과는 ? {url : "/"}
+  console.log(NAV_INDEX.hom.url) 결과는 ? "/"
+  console.log(NAV_INDEX["home"]) 결과는 ?  {url : "/"}
+
 */
 const NAV_INDEX = {
   home: { url: "/" },
-  notice: { url: "/bbs/notice" },
-  free: { url: "/bbs/free" },
+  notice: { url: "bbs/notice" },
+  free: { url: "bbs/free" },
 };
 document.addEventListener("DOMContentLoaded", () => {
   const mainNav = document.querySelector("nav.main");
@@ -54,8 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
   //   .querySelector(`nav.main li.${pathname}`)
   //   ?.classList.add("active");
 
-  // nav 가 2단계 이상일 경우
-  // JSON type 의 데이터를 Array type 의 데이터로 변환하기
+  // // nav 가 2단계 이상일 경우
+  // // JSON type 의 데이터를 Array type 의 데이터로 변환하기
   // const navs = Object.values(NAV_INDEX);
   // navs.forEach((nav) => {
   //   // 배열.join("sp") : 배열을 sp 문자열을 중간에 추가하여 하나의 문자열로 바꾸는 함수
@@ -69,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // navs 는 home, notice, free 라는 요소가 있는 배열이 된다
   const navs = Object.keys(NAV_INDEX);
   navs.forEach((key) => {
-    if (pathArr.join(" ".includes(key))) {
+    if (pathArr.join(" ").includes(key)) {
       document
         .querySelector(`nav.main li${key}`)
         ?.classList.add("active");

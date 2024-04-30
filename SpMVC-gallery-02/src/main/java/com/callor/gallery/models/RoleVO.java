@@ -7,18 +7,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Setter
 @Getter
+@Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ImageVO {
+public class RoleVO {
 	
-	private String i_id;		//	VARCHAR(125)
-	private String i_gid;		//	VARCHAR(125)
-	private String i_origin_image;//	VARCHAR(255)
-	private String i_up_image;//	VARCHAR(255)
-
+	private String r_username;
+	private String r_role;
 
 }

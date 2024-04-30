@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value="/bbs/notice")
 public class BBsNoticeController {
 	
-	@RequestMapping(value={"/",""},method=RequestMethod.GET)
+	@RequestMapping(value= {"/",""},method=RequestMethod.GET)
 	public String home() {
 		return "bbs/notice/list";
 	}

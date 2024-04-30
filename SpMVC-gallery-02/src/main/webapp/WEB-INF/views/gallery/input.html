@@ -2,7 +2,7 @@
 <html
   lang="ko"
   xmlns:th="http://www.thymeleaf.org"
-  xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
   layout:decorate="~{/home}"
 >
   <section layout:fragment="content">
@@ -12,7 +12,7 @@
       th:href="@{/static/css/gallery_input.css}"
     />
     <script
-      src="../../../static//js/gallery_input.js"
+      src="../../../static/js/gallery_input.js"
       th:src="@{/static/js/gallery_input.js}"
     ></script>
     <section class="gallery">
@@ -29,7 +29,7 @@
             </div>
             <div>
               <textarea
-                placeholder="이미지설명"
+                placeholder="이미지 설명"
                 name="g_content"
               ></textarea>
             </div>
@@ -40,8 +40,6 @@
                 name="image_file"
                 accept="image/*"
               />
-            </div>
-            <div>
               <input
                 type="file"
                 class="file multi"
@@ -50,12 +48,13 @@
                 multiple
               />
             </div>
+
             <div><input type="hidden" name="g_image" /></div>
             <div class="image">
               <img
                 src="../../../static/images/no_image.png"
                 th:src="@{/static/images/no_image.png}"
-                width="200px"
+                width="300px"
                 class="gallery"
               />
             </div>
