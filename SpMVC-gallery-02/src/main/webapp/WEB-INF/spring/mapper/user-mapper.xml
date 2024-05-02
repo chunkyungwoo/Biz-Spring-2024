@@ -12,15 +12,22 @@
  		SELECT * FROM tbl_users WHERE username = #{username}
  	</select>
  	
+ 	<insert id="insert" >
+ 		INSERT INTO tbl_users(
+ 			username,password,email,tel
+ 		) VALUES(
+ 			#{username},#{password},#{email},#{tel}
+ 		)
+ 	</insert>
  	<update id="update"></update>
  	<delete id="delete"></delete>
- 	
+ 
  	<select id="create_table">
- 		CREATE TABLE IF NOT EXISTS tbl_users (
-			username	VARCHAR(125)	PRIMARY KEY,
-			password	VARCHAR(125)	NOT NULL,
-			email	VARCHAR(125)	NOT NULL,
-			tel	VARCHAR(125)	NOT NULL
-		)
+ 	CREATE TABLE IF NOT EXISTS tbl_users(
+	username	VARCHAR(125)		PRIMARY KEY,
+	password	VARCHAR(125)	NOT NULL	,
+	email	VARCHAR(125)	NOT NULL	,
+	tel	VARCHAR(125)	NOT NULL	
+	)
  	</select>
  </mapper> 

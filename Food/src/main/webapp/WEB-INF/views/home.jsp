@@ -12,6 +12,7 @@
     <h1>홈화면</h1>
     <ul>
     	<li><a href="${rootPath}/random">랜덤돌리러가기</a></li>
+    	<li><a href="${rootPath}/roulette">jquery</a></li>
     </ul>
   </body>
 </html>

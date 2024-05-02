@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const numItems = foodItems.length;
     const index = Math.floor((angle % 360) / (360 / numItems));
     alert("선택된 음식: " + foodItems[index].innerText);
+
+    const selectedFood = foodItems[index].innerText;
+    const inputBoxes = document.querySelectorAll(".selectfood input");
+    inputBoxes[0].value = selectedFood; // 첫 번째 input 상자에 선택된 음식 표시
   }
 
   document

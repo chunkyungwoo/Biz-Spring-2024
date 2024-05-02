@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://thymeleaf.org/extras/spring-security"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,25 +16,25 @@
 <link rel="stylesheet" href="../../static/css/main.css"
 	th:href="@{/static/css/main.css}" />
 <script th:inline="javascript">
-	// thymeleaf 에 사용하는 변수(EL, @{/} ) 를
-	// 문자열로 변환하여 rootPath 변수에 할당하기
+	// thymeleaf 에서 사용하는 변수(EL, @{/}) 를 문자열로 변환하여
+	//   rootPath 변수에 할당하기
 	const rootPath= /*[[@{/}]]*/
 </script>
+
 <script src="../../static/js/main_nav.js"
-	th:src="@{/static/js/main_nav.js}" th:inline="javascript"></script>
+	th:src="@{/static/js/main_nav.js}"></script>
 </head>
 <body>
 	<header class="main">
 		<h1>이미지 갤러리 2024 v2</h1>
 		<div>
 			<a href="./user/login.html" th:href="@{/user/login}"
-				sec:authorize="isAnonymous()">로그인</a> 
-			<a
-				href="./user/join.html" th:href="@{/user/join}" 
-				sec:authorize="isAnonymous()">회원가입</a>
-			<a href="" th:href="@{user/mypage}" 
-				sec:authorize="isAuthenticated()" >마이페이지(<span sec:authentication="principal"></span>)</a>
-			<a href="" th:href="@{user/logout}" 
+				sec:authorize="isAnonymous()">로그인</a> <a
+				href="./user/join.html" th:href="@{/user/join}"
+				sec:authorize="isAnonymous()">회원가입</a> <a href="#"
+				th:href="@{/user/mypage}" sec:authorize="isAuthenticated()">마이페이지(
+				<span sec:authentication="principal.username"></span> )
+			</a> <a href="#" th:href="@{/user/logout}"
 				sec:authorize="isAuthenticated()">로그아웃</a>
 		</div>
 	</header>
@@ -45,6 +45,12 @@
 			<li class="free">자유게시판</li>
 		</ul>
 	</nav>
+
+	<!-- <a href="/" th:href="@{/}">홈</a>
+    <a href="/gallery/insert" th:href="@{/gallery/insert}"
+      >이미지 업로드</a
+    > -->
+
 	<section class="main" layout:fragment="content"></section>
 </body>
 </html>

@@ -30,5 +30,6 @@ public class FoodController {
 		model.addAttribute("food",randomFood);
 		return "food/random";
 	}
+	
 
 }

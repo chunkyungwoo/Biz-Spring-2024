@@ -2,24 +2,21 @@
 <html
   lang="ko"
   xmlns:th="http://www.thymeleaf.org"
-  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
   layout:decorate="~{/home}"
 >
-  <sectio layout:fragment="content">
-    <link
-      rel="stylesheet"
-      href="../../../static/css/user.css"
-      th:href="@{/static/css/user.css}"
-    />
-    <form method="POST" class="user join">
-      <fieldset>
-        <legend>회원가입</legend>
-        <div><input type="text" placeholder="USERNAME" /></div>
-        <div><input type="text" placeholder="PASSWORD" /></div>
-        <div><input type="text" placeholder="Email" /></div>
-        <div><input type="text" placeholder="TEL" /></div>
-        <div><input type="submit" value="회원가입" /></div>
-      </fieldset>
+  <section layout:fragment="content" >
+    <fieldset>
+      <legend>회원가입</legend>
+    <link rel="stylesheet" href="../../../static/css/user.css" th:href="@{/static/css/user.css}" />
+    <form method="POST" class="user join" th:action>
+      <div><input type="text" placeholder="USERNMAE" name="username"/></div>
+      <div><input type="text" placeholder="PASSWORD" name="password"/></div>
+      <div><input type="text" placeholder="PASSWORD 확인" /></div>
+      <div><input type="text" placeholder="Email" name="email"/></div>
+      <div><input type="text" placeholder="TEl" name="tel"/></div>
+      <div><input type="submit" value="회원가입" /></div>
+    </fieldset>
     </form>
-  </sectio>
+  </section>
 </html>
