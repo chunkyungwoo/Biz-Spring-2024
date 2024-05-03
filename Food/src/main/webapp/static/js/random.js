@@ -30,9 +30,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const index = Math.floor((angle % 360) / (360 / numItems));
     alert("선택된 음식: " + foodItems[index].innerText);
 
-    const selectedFood = foodItems[index].innerText;
-    const inputBoxes = document.querySelectorAll(".selectfood input");
-    inputBoxes[0].value = selectedFood; // 첫 번째 input 상자에 선택된 음식 표시
+    // const selectedFood = foodItems[index].innerText;
+    // const inputBoxes = document.querySelectorAll(".selectfood input");
+    // inputBoxes[0].value = selectedFood; // 첫 번째 input 상자에 선택된 음식 표시
+
+    const selectedCategory = foodItems[index].innerText;
+
+    // 서버로 선택된 음식 카테고리를 요청합니다.
+    fetch(
+      "${rootPath}/random/getCategory?category=" +
+        encodeURIComponent(selectedCategory)
+    )
+      .then((response) => response.text())
+      .then((data) => {
+        const selectedFoodList = data.split(", "); // 서버에서 받은 음식 리스트를 배열로 변환합니다.
+        const inputBoxes = document.querySelectorAll(
+          ".selectfood input"
+        );
+        inputBoxes[1].value = selectedFoodList.join(", "); // 두 번째 input 상자에 선택된 음식 리스트 표시
+      })
+      .catch((error) => console.error("Error:", error));
   }
 
   document
