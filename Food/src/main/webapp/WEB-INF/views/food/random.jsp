@@ -4,11 +4,14 @@
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="${rootPath}/static/css/random.css?2024-04-18-001">
+<link rel="stylesheet" href="${rootPath}/static/css/random.css?2024-04-18-003">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script src="${rootPath}/static/js/random.js?2024-04-26-002"></script>
+<script type="text/javascript">
+	const rootPath = "${rootPath}"
+</script>
 <title>Random Food Selector</title>
 </head>
 <body>
@@ -33,7 +36,7 @@
 	<div class="selectfood">
 		<div>
 			<input readonly="readonly">
-			<input>
+			<input id="random" readonly="readonly">
 		</div>
 		<button id="selectButton">돌려</button>
 	</div>
