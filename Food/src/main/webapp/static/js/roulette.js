@@ -1,11 +1,8 @@
 const $c = document.querySelector("canvas");
 const ctx = $c.getContext(`2d`);
+const menuAdd = document.querySelector("#menuAdd");
 const product = ["햄버거", "순대국", "정식당", "중국집", "구내식당"];
 const colors = [];
-
-// canvas 요소의 너비와 높이 설정
-$c.width = 500;
-$c.height = 500;
 
 const newMake = () => {
   const [cw, ch] = [$c.width / 2, $c.height / 2];
@@ -64,5 +61,19 @@ const rotate = () => {
     $c.style.transition = `2s`;
   }, 1);
 };
+
+function add() {
+  if (menuAdd.value != undefined && menuAdd.value != "") {
+    product.push(menuAdd.value);
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    colors.push("rgb(" + r + "," + g + "," + b + ")");
+    newMake();
+    menuAdd.value = "";
+  } else {
+    alert("메뉴를 입력한 후 버튼을 클릭 해 주세요");
+  }
+}
 
 newMake();
