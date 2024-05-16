@@ -1,10 +1,10 @@
 @charset "UTF-8";
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 html {
   width: 100vw;
   height: 100vh;
@@ -21,6 +21,7 @@ a {
 section.main {
   width: 100%;
   border: 1px solid blue;
+
   .image {
     width: 80%;
     margin: 0 auto;
