@@ -10,7 +10,7 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		// TODO Auto-generated method stub
-		return new Class[] { RootContextConfig.class };
+		return new Class[] { RootContextConfig.class,SecurityContextConfig.class };
 	}
 
 	@Override
@@ -22,16 +22,18 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 	@Override
 	protected String[] getServletMappings() {
 		// TODO Auto-generated method stub
-		return new String[] { "/" };
+		return new String[] {"/" };
 	}
-	
+
 	@Override
 	protected Filter[] getServletFilters() {
-		CharacterEncodingFilter enkor = new CharacterEncodingFilter();
-		enkor.setEncoding("UTF-8");
-		enkor.setForceEncoding(true);
-		return new Filter[] {enkor};
-		
+		CharacterEncodingFilter encKor = new CharacterEncodingFilter();
+		encKor.setEncoding("UTF-8");
+		encKor.setForceEncoding(true);
+		return new Filter[] { encKor };
 	}
+	
+	
+	
 
 }

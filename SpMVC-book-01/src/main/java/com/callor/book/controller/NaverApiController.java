@@ -22,16 +22,25 @@ public class NaverApiController {
 	}
 	
 	@RequestMapping(value="/add",method=RequestMethod.GET)
-	public Map<String, String> add(String num1,String num2) {
+	public Map<String, String> add(String num1, String num2) {
 		int sum = 0;
 		try {
 			sum = Integer.valueOf(num1) + Integer.valueOf(num2);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		Map<String, String> result = new HashMap<String,String>();
+		Map<String, String> result = new HashMap<String, String>();
 		result.put("결과", sum + "");
 		return result;
 	}
-
+	
+	@RequestMapping(value="/user",method=RequestMethod.GET,
+				produces = "application/json;charset=UTF-8")
+	public Map<String, String> getUser() {
+		Map<String,String> user = new HashMap<String, String>();
+		user.put("username","홍길동");
+		return user;
+	}
+	
+	
 }
