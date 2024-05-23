@@ -15,7 +15,7 @@
     <!-- 적용하는 프로젝트의  Base Package를 설정 -->
     <!-- STDOUT 에 설정된 pattern 으로 Console 에 log 출력 -->
     <!-- 중복되어 출력되는 것을 방지 : additivity="false -->
-    <logger name="com.food.hello" level="DEBUG" additivity="false">
+    <logger name="com.callor.food" level="DEBUG" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
 
