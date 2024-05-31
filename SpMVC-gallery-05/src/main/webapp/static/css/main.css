@@ -1,0 +1,25 @@
+@charset "UTF-8";
+section.image.list {
+  width: 90%;
+  margin: 5px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+div.image.item {
+  border: 1px solid blue;
+  width: 200px;
+  header {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: #aaa;
+  }
+  img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px black;
+  }
+  div {
+    background-color: #ccc;
+  }
+}
