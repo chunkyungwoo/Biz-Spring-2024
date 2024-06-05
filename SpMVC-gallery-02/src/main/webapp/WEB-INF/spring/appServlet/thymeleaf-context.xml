@@ -27,5 +27,4 @@
 		<property name="characterEncoding" value="UTF-8"/>
 		<property name="order" value="1"/>
 	</bean>
-
 </beans>

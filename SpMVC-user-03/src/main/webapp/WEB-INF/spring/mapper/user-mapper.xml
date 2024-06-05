@@ -27,5 +27,4 @@
  			REFERENCES tbl_users(username) ON DELETE CASCADE
  		)
  	</select>
- 
  </mapper> 

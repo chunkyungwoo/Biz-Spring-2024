@@ -31,8 +31,7 @@ public class AuthorProviderImpl implements AuthenticationProvider{
 		}
 		if(u_password == null || u_password.isBlank() || !u_password.equalsIgnoreCase("12345")) {
 			throw new BadCredentialsException("비밀번호 오류");
-		}
-		
+		}	
 		Map<String, String> user = new HashMap<>();
 		user.put("username", u_name);
 		user.put("email", "callor@callor.com");

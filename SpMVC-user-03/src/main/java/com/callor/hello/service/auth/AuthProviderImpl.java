@@ -54,7 +54,6 @@ public class AuthProviderImpl implements AuthenticationProvider{
 		String username = authentication.getName();
 		String password = authentication.getCredentials().toString();
 		log.debug("로그인한 사용자 정보 {}. {}", username, password);
-		
 		UserVO userVO = userDao.findById(username);
 		if(userVO == null) {
 			/*
@@ -73,8 +72,7 @@ public class AuthProviderImpl implements AuthenticationProvider{
 			throw new BadCredentialsException("비밀번호를 다시 확인하세요");
 		}
 		List<RoleVO> roles = roleDao.findByUserName(username);
-		List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
-		
+		List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();	
 		// 문자열로 되어있는 권한 정보를 GrantedAuthority type 으로 변환하기
 		for(RoleVO r : roles) {
 			grantList.add(new SimpleGrantedAuthority(r.getR_role()));
@@ -82,8 +80,7 @@ public class AuthProviderImpl implements AuthenticationProvider{
 		// DB 로 부터 조회된 사용자 정보(userVO)와
 		// 권한정보(grantList) 를 사용하여 토큰(통행증) 발행하기 
 		Authentication token 
-		= new UsernamePasswordAuthenticationToken(userVO, password, grantList);
-		
+		= new UsernamePasswordAuthenticationToken(userVO, password, grantList);	
 		return token;
 	}
 

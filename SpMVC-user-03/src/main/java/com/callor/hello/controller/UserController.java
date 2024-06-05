@@ -44,9 +44,6 @@ public class UserController {
 		// username 사용자 이름이 가입되지 않았다
 		if(userVO == null) return "OK";
 		return null;
-			
-		
-		
 	}
 
 }

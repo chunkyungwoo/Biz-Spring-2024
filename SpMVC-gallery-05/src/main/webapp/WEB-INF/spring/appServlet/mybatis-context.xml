@@ -29,5 +29,4 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="ds"/>
 	</bean>
-
 </beans>
